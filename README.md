@@ -35,4 +35,37 @@ Altres classes:
 - Humà - Homo sapiens [C]
 - Vehicle [C]
 
-  
+
+### Instal·lació (macOS)
+Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió acabada en 'pkg'.
+
+Executem el fitxer "Miniconda3-latest-MacOSX-x86_64.pkg" o "Miniconda3-latest-MacOSX-arm64.pkg" (depenent de l'arquitectura) i seguim els passos en pantalla.
+
+Un cop finalitzat, executarem l'aplicació 'Terminal'. Es pot trobar a dins de la carpeta 'Altres' al menú d'aplicacions. També s'hi pot accedir utilitzant l'eina de cerca (Cmd+Espai) i escrivint 'Terminal'.
+
+Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes. Per fer-ho introduirem:
+
+```bash
+conda create --name pyrvision python=3.8
+```
+
+Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
+
+Un cop creat l'entorn caldrà activar-lo per tal de treballar-hi. Escriurem:
+
+```bash
+conda activate pyrvision
+```
+
+Veurem que el començament de l'última línia ha passat de (base) a (pyrvision). Això ens indicarà que estem en l'entorn adequat.
+
+Seguidament instal·larem les llibreries utilitzades per treballar amb intel·ligència artificial, seguint el mateix procediment que anteriorment:
+
+```bash
+conda install pytorch torchvision -c pytorch
+```
+
+```bash
+conda install conda-forge::ultralytics
+```
+
