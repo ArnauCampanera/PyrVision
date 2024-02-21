@@ -1,5 +1,4 @@
-
-# PyrVision
+# <div align="center">PyrVision</div>
 
 
 [English version](http://github.com/ArnauCampanera/PyrVision/README_en.md)
