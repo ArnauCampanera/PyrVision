@@ -1,5 +1,5 @@
 # PyrVision
-[English below](github.com/ArnauCampanera/PyrVision/README.md#English)
+[English version](github.com/ArnauCampanera/PyrVision/README_en.md)
 
 PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la capacitat de detectar automàticament fins a 16 classes diferents.
 PyrVision utilitza [YOLOv8](https://github.com/ultralytics/ultralytics/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
@@ -108,6 +108,7 @@ El programa començarà a detectar les imatges. Depenent del volum i de al rapid
 
 Un cop finalitzat buscarem a dins de PyrVision la carpeta 'predicted' on hi trobarem totes les imatges classificades per espècie, així com una carpeta anomenada 'nuls' amb les imatges on no s'hi ha detectat res.
 
+
 ### Opcions
 
 #### Valor de confiança
@@ -128,3 +129,21 @@ conf_COLOR = 0.8
 conf_BW = 0.6
 ```
 
+#### Rectangle de detecció
+
+Per defecte, PyrVision no dibuixa un rectangle al voltant de l'animal detectat. En cas que vulguem que ho faci, podem modificar la cel·la d'opcions dins del fitxer 'init.ipynb' amb Jupyter Notebook. Haurem de donar el valor de 'True' a la variable 'rectangle'.
+
+```python
+rectangle = True
+```
+
+
+### <div align="center">Finalitzar</div>
+
+Per finalitzar, anem a Jupyter Notebook. Si hem fet alguna modificació i volem que es mantingui per futures classificacions guardem els canvis mitjançant File > Save Notebook.
+
+Per tancar el fitxer fem 'File > Close and Shut Down Notebook' i confirmem.
+
+Fer finalitzar Jupyter Notebook fem 'File > Shut Down' i confirmem. Ara ja podem tancar la pestanya del navegador.
+
+Per tancar la Terminal escriurem 'exit' i confirmarem. Ara ja podem tancar la Terminal.
