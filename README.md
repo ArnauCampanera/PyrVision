@@ -13,6 +13,8 @@ PyrVision utilitza [YOLOv8](https://github.com/ultralytics/ultralytics/), l'esta
 
 </div>
 
+
+
 ## <div align="center">Documentació</div>
 
 ### Arquitectura del Model
@@ -54,7 +56,7 @@ A continuació es detallen les instruccions per instal·lar i utilitzar PyrVisio
 Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
 
 #### Prerequisits
-Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió acabada en 'pkg'.
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió de Python 3.9, i el fitxer acabat en 'pkg'.
 
 Executem el fitxer "Miniconda3-latest-MacOSX-x86_64.pkg" o "Miniconda3-latest-MacOSX-arm64.pkg" (depenent de l'arquitectura) i seguim els passos en pantalla.
 
@@ -63,7 +65,7 @@ Un cop finalitzat, executarem l'aplicació 'Terminal'. Es pot trobar a dins de l
 Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes i que aquests puguin seguir funcionant independentment. Per fer-ho introduirem:
 
 ```bash
-conda create --name pyrvision python=3.8
+conda create --name pyrvision python=3.9
 ```
 
 Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
@@ -99,6 +101,8 @@ Per descarregar el codi de PyrVision, executarem la següent comanda:
 ```bash
 git clone https://github.com/ArnauCampanera/PyrVision.git
 ```
+Això ens crearà la carpeta 'PyrVision' al nostre directori arrel (normalment amb el nom d'usuari).
+
 
 ### <div align="center">Utilització</div>
 
@@ -116,12 +120,6 @@ Se'ns obrirà el navegador d'internet que tinguem configurat per defecte i ens a
 - A la barra de menú, anirem a 'Run' i buscarem l'opció 'Run All Cells'
 
 El programa començarà a detectar les imatges. Depenent del volum i de al rapidesa de l'ordinador pot tardar més o menys. Podem fer l'estimació d'uns 10 seg per imatge en un ordinador normal.
-
-
-### Resultats
-
-Un cop finalitzat buscarem a dins de PyrVision la carpeta 'predicted' on hi trobarem totes les imatges classificades per espècie, així com una carpeta anomenada 'nuls' amb les imatges on no s'hi ha detectat res.
-
 
 
 ### <div align="center">Finalitzar</div>
@@ -144,7 +142,7 @@ Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits.
 
 #### Prerequisits
 ##### Miniconda
-Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#windows-installers). Es recomana baixar la versió Python 3.10 .
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#windows-installers). Es recomana baixar la versió Python 3.9 .
 
 Executem el fitxer descarregat i seguim els passos en pantalla.
 
@@ -153,7 +151,7 @@ Un cop finalitzada l'instal·lació trobarem al menú de Windows una nova carpet
 Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes i que aquests puguin seguir funcionant independentment. Per fer-ho introduirem:
 
 ```bash
-conda create --name pyrvision python=3.8
+conda create --name pyrvision python=3.9
 ```
 
 Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
@@ -178,7 +176,9 @@ conda install pytorch torchvision cpuonly -c pytorch
 ```bash
 conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia
 ```
-
+```bash
+conda install conda-forge::ultralytics
+```
 
 Finalment, instal·lem Jupyter Notebook, una eina per poder executar el codi de PyrVision i poder modificar-ne algunes opcions.
 
@@ -214,12 +214,6 @@ Se'ns obrirà el navegador d'internet que tinguem configurat per defecte i ens a
 El programa començarà a detectar les imatges. Depenent del volum i de al rapidesa de l'ordinador pot tardar més o menys. Podem fer l'estimació d'uns 10 seg per imatge en un ordinador normal. Si disposem d'una GPU NVIDIA aquest temps es pot veure molt reduït, a 0.5 seg per imatge.
 
 
-### Resultats
-
-Un cop finalitzat buscarem a dins de PyrVision la carpeta 'predicted' on hi trobarem totes les imatges classificades per espècie, així com una carpeta anomenada 'nuls' amb les imatges on no s'hi ha detectat res.
-
-
-
 ### <div align="center">Finalitzar</div>
 
 Per finalitzar, anem a Jupyter Notebook. Si hem fet alguna modificació i volem que es mantingui per futures classificacions guardem els canvis mitjançant File > Save Notebook.
@@ -232,6 +226,101 @@ Per tancar 'Anaconda Prompt (miniconda3)' escriurem 'exit' i confirmarem. Ara ja
 
 </details>
 
+<details close>
+<summary>Sistemes Linux</summary>
+
+### <div align="center">Instal·lació (Linux)</div>
+Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
+
+#### Prerequisits
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#linux-installers) triant l'arquitectura de CPU adequada (si no n'esteu segurs, la primera versió serà probablement la bona). Es recomana baixar la versió de Python 3.9 .
+
+Per instal·lar miniconda haurem d'introduir algunes comandes des de la Terminal. En la següent comanda cal substituir 'fitxer' per la ruta fins al fitxer descarregat.
+```bash
+bash fitxer
+```
+Seguim les instruccions de pantalla, acceptant la configuració per defecte.
+
+Un cop finalitzat, tanquem i reobrim la Terminal per aplicar els canvis. 
+
+Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes i que aquests puguin seguir funcionant independentment. Per fer-ho introduirem:
+
+```bash
+conda create --name pyrvision python=3.9
+```
+
+Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
+
+Un cop creat l'entorn caldrà activar-lo per tal de treballar-hi. Escriurem:
+
+```bash
+conda activate pyrvision
+```
+
+Veurem que el començament de l'última línia ha passat de (base) a (pyrvision). Això ens indicarà que estem en l'entorn adequat.
+
+Seguidament instal·larem les llibreries utilitzades per treballar amb intel·ligència artificial. Depenent de si el nostre equip conta amb una targeta gràfica (GPU) NVIDIA o no, haurem de fer servir una comanda o una altra.
+
+- Si el nostre equip no té una GPU NVIDIA, o no n'estem segurs, executem la següent comanda:
+```bash
+conda install pytorch torchvision cpuonly -c pytorch
+```
+
+- Si el nostre equip té una GPU NVIDIA executem la següent comanda:
+
+```bash
+conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia
+```
+
+```bash
+conda install conda-forge::ultralytics
+```
+
+Finalment, instal·larem Jupyter Notebook, una eina per poder executar el codi de PyrVision i poder modificar-ne algunes opcions.
+
+```bash
+conda install -c conda-forge notebook
+```
+
+#### Descarregar PyrVision
+
+Per descarregar el codi de PyrVision, executarem la següent comanda:
+
+```bash
+git clone https://github.com/ArnauCampanera/PyrVision.git
+```
+Això ens crearà la carpeta 'PyrVision' al nostre directori arrel (normalment amb el nom d'usuari).
+
+
+### <div align="center">Utilització</div>
+
+Per fer una classificació automàtica d'imatges seguirem els següents passos:
+- Copiar totes les imatges que volem detectar a la carpeta "inbox" que trobarem a dins de la carpeta PyrVision.
+- Obrirem la Terminal i executarem la següent comanda per obrir Jupyter Notebook
+```bash
+cd PyrVision			# Ens col·loquem dins de la carpeta de PyrVision
+conda activate pyrvision 	# Activem l'entorn que hem creat durant la instal·lació
+jupyter notebook		# Executem Jupyter Notebook
+```
+Se'ns obrirà el navegador d'internet que tinguem configurat per defecte i ens apareixerà el contingut de la carpeta PyrVision. Es recomana utilitzar Google Chrome o Mozilla Firefox. 
+
+- Fem doble-click al fitxer init.ipynb perquè s'obri.
+- A la barra de menú, anirem a 'Run' i buscarem l'opció 'Run All Cells'
+
+El programa començarà a detectar les imatges. Depenent del volum i de al rapidesa de l'ordinador pot tardar més o menys. Podem fer l'estimació d'uns 10 seg per imatge en un ordinador normal. Si disposem d'una GPU NVIDIA aquest temps es pot veure molt reduït, a 0.5 seg per imatge.
+
+
+### <div align="center">Finalitzar</div>
+
+Per finalitzar, anem a Jupyter Notebook. Si hem fet alguna modificació i volem que es mantingui per futures classificacions guardem els canvis mitjançant File > Save Notebook.
+
+Per tancar el fitxer fem 'File > Close and Shut Down Notebook' i confirmem.
+
+Fer finalitzar Jupyter Notebook fem 'File > Shut Down' i confirmem. Ara ja podem tancar la pestanya del navegador.
+
+Per tancar la Terminal escriurem 'exit' i confirmarem. Ara ja podem tancar la Terminal.
+
+</details>
 
 ### Opcions
 
@@ -260,3 +349,9 @@ Per defecte, PyrVision no dibuixa un rectangle al voltant de l'animal detectat. 
 ```python
 rectangle = True
 ```
+
+## Resultats
+
+Un cop finalitzat buscarem a dins de PyrVision la carpeta 'predicted' on hi trobarem totes les imatges classificades per espècie, així com una carpeta anomenada 'nuls' amb les imatges on no s'hi ha detectat res.
+
+
