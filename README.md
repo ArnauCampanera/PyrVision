@@ -1,4 +1,7 @@
-<h1 style="text-align: center;">PyrVision</h1>
+
+# PyrVision
+
+
 [English version](http://github.com/ArnauCampanera/PyrVision/README_en.md)
 
 
@@ -6,7 +9,10 @@
 PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la capacitat de detectar automàticament fins a 16 classes diferents.
 PyrVision utilitza [YOLOv8](https://github.com/ultralytics/ultralytics/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
 
+<div align="center">
+  <img width="60%" src="https://github.com/ArnauCampanera/PyrVision/assets/159940202/bf3dd13b-a849-41c6-86c3-a59f3d8a8c64)">
 
+</div>
 
 ## <div align="center">Documentació</div>
 
