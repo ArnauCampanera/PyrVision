@@ -37,7 +37,10 @@ Altres classes:
 
 
 ### Instal·lació (macOS)
-Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió acabada en 'pkg'.
+Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
+
+#### Prerequisits
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió acabada en 'pkg'.
 
 Executem el fitxer "Miniconda3-latest-MacOSX-x86_64.pkg" o "Miniconda3-latest-MacOSX-arm64.pkg" (depenent de l'arquitectura) i seguim els passos en pantalla.
 
@@ -69,3 +72,38 @@ conda install pytorch torchvision -c pytorch
 conda install conda-forge::ultralytics
 ```
 
+Finalment, instal·larem Jupyter Notebook, una eina per poder executar el codi de PyrVision i poder modificar-ne algunes opcions.
+
+```bash
+conda install -c conda-forge notebook
+```
+
+#### Descarregar PyrVision
+
+Per descarregar el codi de PyrVision, executarem la següent comanda:
+
+```bash
+git clone https://github.com/ArnauCampanera/PyrVision.git
+```
+
+### Utilització
+
+Per fer una classificació automàtica d'imatges seguirem els següents passos:
+- Copiar totes les imatges que volem detectar a la carpeta "inbox" que trobarem a dins de la carpeta PyrVision.
+- Obrirem la Terminal i executarem la següent comanda per obrir Jupyter Notebook
+```bash
+cd PyrVision			# Ens col·loquem dins de la carpeta de PyrVision
+conda activate pyrvision 	# Activem l'entorn que hem creat durant la instal·lació
+jupyter notebook		# Executem Jupyter Notebook
+```
+Se'ns obrirà el navegador d'internet que tinguem configurat per defecte i ens apareixerà el contingut de la carpeta PyrVision. Es recomana utilitzar Google Chrome. 
+
+- Fem doble-click al fitxer init.ipynb perquè s'obri.
+- A la barra de menú, anirem a 'Run' i buscarem l'opció 'Run All Cells'
+
+El programa començarà a detectar les imatges. Depenent del volum i de al rapidesa de l'ordinador pot tardar més o menys. Podem fer l'estimació d'uns 10 seg per imatge en un ordinador normal.
+
+
+#### Resultats
+
+Un cop finalitzat buscarem a dins de PyrVision la carpeta 'predicted' on hi trobarem totes les imatges classificades per espècie, així com una carpeta anomenada 'nuls' amb les imatges on no s'hi ha detectat res.
