@@ -36,6 +36,11 @@ Altres classes:
 - Vehicle [C]
 
 
+A continuació es detallen les instruccions per instal·lar i utilitzar PyrVision en funció de la plataforma que utilitzeu.
+
+<details close>
+<summary>Sistemes amb macOS</summary>
+
 ### <div align="center">Instal·lació (macOS)</div>
 Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
 
@@ -147,3 +152,5 @@ Per tancar el fitxer fem 'File > Close and Shut Down Notebook' i confirmem.
 Fer finalitzar Jupyter Notebook fem 'File > Shut Down' i confirmem. Ara ja podem tancar la pestanya del navegador.
 
 Per tancar la Terminal escriurem 'exit' i confirmarem. Ara ja podem tancar la Terminal.
+
+</details
