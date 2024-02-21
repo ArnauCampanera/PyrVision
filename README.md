@@ -36,7 +36,7 @@ Altres classes:
 - Vehicle [C]
 
 
-### Instal·lació (macOS)
+### <div align="center">Instal·lació (macOS)</div>
 Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
 
 #### Prerequisits
@@ -86,7 +86,7 @@ Per descarregar el codi de PyrVision, executarem la següent comanda:
 git clone https://github.com/ArnauCampanera/PyrVision.git
 ```
 
-### Utilització
+### <div align="center">Utilització</div>
 
 Per fer una classificació automàtica d'imatges seguirem els següents passos:
 - Copiar totes les imatges que volem detectar a la carpeta "inbox" que trobarem a dins de la carpeta PyrVision.
@@ -104,6 +104,27 @@ Se'ns obrirà el navegador d'internet que tinguem configurat per defecte i ens a
 El programa començarà a detectar les imatges. Depenent del volum i de al rapidesa de l'ordinador pot tardar més o menys. Podem fer l'estimació d'uns 10 seg per imatge en un ordinador normal.
 
 
-#### Resultats
+### Resultats
 
 Un cop finalitzat buscarem a dins de PyrVision la carpeta 'predicted' on hi trobarem totes les imatges classificades per espècie, així com una carpeta anomenada 'nuls' amb les imatges on no s'hi ha detectat res.
+
+### Opcions
+
+#### Valor de confiança
+
+Si observem que PyrVision s'està descuidant alguns animals i classificant la imatge com a buida, pot ser que el valor de confiança que li estem exigint al model sigui massa alt.
+
+El valor de confiança és aquell que, en una escala de 0-1, indica com de segurs volem que estigui el model a l'hora de decidir si el que veu és un animal o no.
+
+Si hi posem un valor molt alt (per exemple, 0.95) ens assegurarem que tot el que classifica és segurament correcte, però també és possible que es descuidi molts individus i que doni les imatges per buides, al no estar-ne molt segur.
+
+Per contra, si li posem un valor molt baix (per exemple, 0.05) ens assegurarem de no deixar-nos cap individu, però alhora, també és possible que identifiqui branques o altres objectes com a animals si s'hi assemblen lleugerament.
+
+Si volem canviar els valors de confiança del model haurem de modificar el fitxer 'init.ipynb'. Ho podem fer des de Jupyter Notebook.
+
+Ens situem a la cel·la de codi d''Opcions de PyrVision'. Allà podem modificar els valors per defecte per cada model:
+```python
+conf_COLOR = 0.8
+conf_BW = 0.6
+```
+
