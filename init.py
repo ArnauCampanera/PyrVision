@@ -11,7 +11,7 @@ def read_predicted_species():
     detections = []
     label = os.listdir(prediction_labels_path)
     if len(label) != 0:
-        with open("{}/{}".format(prediction_labels_path, label[0]), "r") as file:
+        with open(f"{prediction_labels_path}/{label[0]}", "r") as file:
             # Read classes
             linies = file.readlines()
             for linia in linies:
@@ -31,25 +31,23 @@ def storefiles(file):
         # Si no hi ha cap detecció a la imatge
         try:
             shutil.move(
-                "{}/{}".format(watch_directory, file),
-                "{}/{}/".format("predicted", "nuls"),
+                Path(f"{watch_directory}/{file}/predicted/nuls"),
             )
         except IOError as io_err:
-            os.makedirs(os.path.dirname("{}/{}/".format("predicted", "nuls")))
-            shutil.move(
-                "{}/{}".format(watch_directory, file),
-                "{}/{}/".format("predicted", "nuls"),
-            )
+            os.makedirs(os.path.dirname(Path("predicted/nuls")))
+            shutil.move(Path(f"{watch_directory}/{file}/predicted/nuls"))
     else:
         try:
             shutil.move(
-                "{}/{}".format(watch_directory, file),
-                "{}/{}/".format("predicted", *especies[int(especie[0])]),
+                Path(
+                    "{}/{}".format(watch_directory, file),
+                    "{}/{}/".format("predicted", *especies[int(especie[0])]),
+                )
             )
         except IOError as io_err:
             os.makedirs(
                 os.path.dirname(
-                    "{}/{}/".format("predicted", *especies[int(especie[0])])
+                    Path("{}/{}/".format("predicted", *especies[int(especie[0])]))
                 )
             )
             shutil.move(
@@ -104,18 +102,18 @@ if __name__ == "__main__":
     ]
 
     for file in onlyfiles:
-        im = Image.open("{}/{}".format(watch_directory, file))
+        im = Image.open(f"{watch_directory}/{file}")
         w, h = im.size
         impalette = im.getpixel((w / 2, h / 2))
         if impalette[0] == impalette[1] == impalette[2]:
             model = YOLO(Path("models/best_BW.pt"))
-            imatge = "{}/{}".format(watch_directory, file)
+            imatge = f"{watch_directory}/{file}"
             results = model.predict(
                 imatge, save_txt=False, save=rectangle, conf=conf_BW
             )
         else:
             model = YOLO(Path("models/best_COLOR.pt"))
-            imatge = "{}/{}".format(watch_directory, file)
+            imatge = Path(f"{watch_directory}/{file}")
             results = model.predict(
                 imatge, save_txt=False, save=rectangle, conf=conf_COLOR
             )
