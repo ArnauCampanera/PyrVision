@@ -4,6 +4,7 @@ from PIL import Image
 import os
 import os.path
 import shutil
+from pathlib import Path
 
 
 def readPredictedSpecies():
@@ -75,11 +76,11 @@ if __name__ == "__main__":
     watchDirectory = r"inbox"
 
     # Ruta de les prediccions
-    prediction_labels_path = "runs/detect/predict/labels"
-    prediction_path = "runs/detect/predict"
+    prediction_labels_path = Path("runs/detect/predict/labels")
+    prediction_path = Path("runs/detect/predict")
 
     # Obrir el fitxer CSV
-    with open("models/especies.csv", "r") as csvfile:
+    with open(Path("models/especies.csv"), "r") as csvfile:
         # Create a CSV reader object
         reader = csv.reader(csvfile)
 
@@ -107,13 +108,13 @@ if __name__ == "__main__":
         w, h = im.size
         impalette = im.getpixel((w / 2, h / 2))
         if impalette[0] == impalette[1] == impalette[2]:
-            model = YOLO("models/best_BW.pt")
+            model = YOLO(Path("models/best_BW.pt"))
             imatge = "{}/{}".format(watchDirectory, file)
             results = model.predict(
                 imatge, save_txt=False, save=rectangle, conf=conf_BW
             )
         else:
-            model = YOLO("models/best_COLOR.pt")
+            model = YOLO(Path("models/best_COLOR.pt"))
             imatge = "{}/{}".format(watchDirectory, file)
             results = model.predict(
                 imatge, save_txt=False, save=rectangle, conf=conf_COLOR
