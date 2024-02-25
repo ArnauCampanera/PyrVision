@@ -7,7 +7,7 @@ import shutil
 from pathlib import Path
 
 
-def readPredictedSpecies():
+def read_predicted_species():
     detections = []
     label = os.listdir(prediction_labels_path)
     if len(label) != 0:
@@ -26,24 +26,24 @@ def readPredictedSpecies():
 
 
 def storefiles(file):
-    especie = readPredictedSpecies()
+    especie = read_predicted_species()
     if (especie is None) != 0:
         # Si no hi ha cap detecció a la imatge
         try:
             shutil.move(
-                "{}/{}".format(watchDirectory, file),
+                "{}/{}".format(watch_directory, file),
                 "{}/{}/".format("predicted", "nuls"),
             )
         except IOError as io_err:
             os.makedirs(os.path.dirname("{}/{}/".format("predicted", "nuls")))
             shutil.move(
-                "{}/{}".format(watchDirectory, file),
+                "{}/{}".format(watch_directory, file),
                 "{}/{}/".format("predicted", "nuls"),
             )
     else:
         try:
             shutil.move(
-                "{}/{}".format(watchDirectory, file),
+                "{}/{}".format(watch_directory, file),
                 "{}/{}/".format("predicted", *especies[int(especie[0])]),
             )
         except IOError as io_err:
@@ -53,7 +53,7 @@ def storefiles(file):
                 )
             )
             shutil.move(
-                "{}/{}".format(watchDirectory, file),
+                "{}/{}".format(watch_directory, file),
                 "{}/{}/".format("predicted", *especies[int(especie[0])]),
             )
         shutil.copytree(
@@ -73,7 +73,7 @@ if __name__ == "__main__":
     rectangle = False
 
     # Ruta de la carpeta a vigilar
-    watchDirectory = r"inbox"
+    watch_directory = r"inbox"
 
     # Ruta de les prediccions
     prediction_labels_path = Path("runs/detect/predict/labels")
@@ -99,25 +99,25 @@ if __name__ == "__main__":
     # function to return files in a directory
     onlyfiles = [
         f
-        for f in os.listdir(watchDirectory)
-        if os.path.isfile(os.path.join(watchDirectory, f))
+        for f in os.listdir(watch_directory)
+        if os.path.isfile(os.path.join(watch_directory, f))
     ]
 
     for file in onlyfiles:
-        im = Image.open("{}/{}".format(watchDirectory, file))
+        im = Image.open("{}/{}".format(watch_directory, file))
         w, h = im.size
         impalette = im.getpixel((w / 2, h / 2))
         if impalette[0] == impalette[1] == impalette[2]:
             model = YOLO(Path("models/best_BW.pt"))
-            imatge = "{}/{}".format(watchDirectory, file)
+            imatge = "{}/{}".format(watch_directory, file)
             results = model.predict(
                 imatge, save_txt=False, save=rectangle, conf=conf_BW
             )
         else:
             model = YOLO(Path("models/best_COLOR.pt"))
-            imatge = "{}/{}".format(watchDirectory, file)
+            imatge = "{}/{}".format(watch_directory, file)
             results = model.predict(
                 imatge, save_txt=False, save=rectangle, conf=conf_COLOR
             )
-        readPredictedSpecies
+        read_predicted_species
         storefiles(file)
