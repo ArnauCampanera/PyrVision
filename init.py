@@ -33,7 +33,7 @@ def storefiles(file):
             shutil.move(
                 Path(f"{watch_directory}/{file}/predicted/nuls"),
             )
-        except IOError as io_err:
+        except IOError:
             os.makedirs(os.path.dirname(Path("predicted/nuls")))
             shutil.move(Path(f"{watch_directory}/{file}/predicted/nuls"))
     else:
@@ -44,7 +44,7 @@ def storefiles(file):
                     "{}/{}/".format("predicted", *especies[int(especie[0])]),
                 )
             )
-        except IOError as io_err:
+        except IOError:
             os.makedirs(
                 os.path.dirname(
                     Path("{}/{}/".format("predicted", *especies[int(especie[0])]))
@@ -102,7 +102,7 @@ if __name__ == "__main__":
     ]
 
     for file in onlyfiles:
-        im = Image.open(f"{watch_directory}/{file}")
+        im = Image.open(Path(f"{watch_directory}/{file}"))
         w, h = im.size
         impalette = im.getpixel((w / 2, h / 2))
         if impalette[0] == impalette[1] == impalette[2]:
