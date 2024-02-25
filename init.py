@@ -4,7 +4,6 @@ from PIL import Image
 import os
 import os.path
 import shutil
-from datetime import datetime
 
 # Valor de confiança en les prediccions en una escala de 0-1
 conf_COLOR = 0.8
