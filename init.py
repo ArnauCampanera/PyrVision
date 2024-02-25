@@ -5,45 +5,6 @@ import os
 import os.path
 import shutil
 
-# Valor de confiança en les prediccions en una escala de 0-1
-conf_COLOR = 0.8
-conf_BW = 0.6
-
-# Altres opcions
-rectangle = False
-
-# Ruta de la carpeta a vigilar
-watchDirectory = r"inbox"
-
-# Ruta de les prediccions
-prediction_labels_path = "runs/detect/predict/labels"
-prediction_path = "runs/detect/predict"
-
-# Obrir el fitxer CSV
-with open("models/especies.csv", "r") as csvfile:
-    # Create a CSV reader object
-    reader = csv.reader(csvfile)
-
-    # Initialize an empty list
-    especies = []
-
-    # Iterate over each row in the CSV file
-    for row in reader:
-        # Append the row values to the list
-        especies.append(row)
-
-# Print the list of data
-for especie in especies:
-    print(especie)
-
-
-# function to return files in a directory
-onlyfiles = [
-    f
-    for f in os.listdir(watchDirectory)
-    if os.path.isfile(os.path.join(watchDirectory, f))
-]
-
 
 def readPredictedSpecies():
     detections = []
@@ -102,17 +63,60 @@ def storefiles(file):
     shutil.rmtree(prediction_path)
 
 
-for file in onlyfiles:
-    im = Image.open("{}/{}".format(watchDirectory, file))
-    w, h = im.size
-    impalette = im.getpixel((w / 2, h / 2))
-    if impalette[0] == impalette[1] == impalette[2]:
-        model = YOLO("models/best_BW.pt")
-        imatge = "{}/{}".format(watchDirectory, file)
-        results = model.predict(imatge, save_txt=False, save=rectangle, conf=conf_BW)
-    else:
-        model = YOLO("models/best_COLOR.pt")
-        imatge = "{}/{}".format(watchDirectory, file)
-        results = model.predict(imatge, save_txt=False, save=rectangle, conf=conf_COLOR)
-    readPredictedSpecies
-    storefiles(file)
+if __name__ == "__main__":
+    # Valor de confiança en les prediccions en una escala de 0-1
+    conf_COLOR = 0.8
+    conf_BW = 0.6
+
+    # Altres opcions
+    rectangle = False
+
+    # Ruta de la carpeta a vigilar
+    watchDirectory = r"inbox"
+
+    # Ruta de les prediccions
+    prediction_labels_path = "runs/detect/predict/labels"
+    prediction_path = "runs/detect/predict"
+
+    # Obrir el fitxer CSV
+    with open("models/especies.csv", "r") as csvfile:
+        # Create a CSV reader object
+        reader = csv.reader(csvfile)
+
+        # Initialize an empty list
+        especies = []
+
+        # Iterate over each row in the CSV file
+        for row in reader:
+            # Append the row values to the list
+            especies.append(row)
+
+    # Print the list of data
+    for especie in especies:
+        print(especie)
+
+    # function to return files in a directory
+    onlyfiles = [
+        f
+        for f in os.listdir(watchDirectory)
+        if os.path.isfile(os.path.join(watchDirectory, f))
+    ]
+
+    for file in onlyfiles:
+        im = Image.open("{}/{}".format(watchDirectory, file))
+        w, h = im.size
+        impalette = im.getpixel((w / 2, h / 2))
+        if impalette[0] == impalette[1] == impalette[2]:
+            model = YOLO("models/best_BW.pt")
+            imatge = "{}/{}".format(watchDirectory, file)
+            results = model.predict(
+                imatge, save_txt=False, save=rectangle, conf=conf_BW
+            )
+        else:
+            model = YOLO("models/best_COLOR.pt")
+            imatge = "{}/{}".format(watchDirectory, file)
+            results = model.predict(
+                imatge, save_txt=False, save=rectangle, conf=conf_COLOR
+            )
+        readPredictedSpecies
+        storefiles(file)
