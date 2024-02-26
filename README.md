@@ -1,7 +1,7 @@
 # <div align="center">PyrVision</div>
 
 
-[English version](http://github.com/ArnauCampanera/PyrVision/README_en.md)
+[English version](https://github.com/ArnauCampanera/PyrVision/blob/main/README_en.md)
 
 
 
