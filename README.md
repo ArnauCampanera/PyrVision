@@ -168,16 +168,13 @@ Seguidament instal·larem les llibreries utilitzades per treballar amb intel·li
 
 - Si el nostre equip no té una GPU NVIDIA, o no n'estem segurs, executem la següent comanda:
 ```bash
-conda install pytorch torchvision cpuonly -c pytorch
+conda install -c pytorch -c conda-forge pytorch torchvision cpuonly ultralytics
 ```
 
 - Si el nostre equip té una GPU NVIDIA executem la següent comanda:
 
 ```bash
-conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia
-```
-```bash
-conda install conda-forge::ultralytics
+conda install -c pytorch -c nvidia -c conda-forge pytorch torchvision pytorch-cuda=11.8 ultralytics
 ```
 
 Finalment, instal·lem Jupyter Notebook, una eina per poder executar el codi de PyrVision i poder modificar-ne algunes opcions.
