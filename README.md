@@ -5,8 +5,8 @@
 
 
 
-PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la capacitat de detectar automàticament fins a 16 classes diferents.
-PyrVision utilitza [YOLOv8](https://github.com/ultralytics/ultralytics/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
+PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la col·laboració del [Centre de Visió per Computador](https://www.cvc.uab.es) que té la capacitat de detectar automàticament fins a 16 classes diferents.
+PyrVision utilitza [YOLOv9](https://github.com/ultralytics/ultralytics/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
 
 <div align="center">
   <img width="60%" src="https://github.com/ArnauCampanera/PyrVision/assets/159940202/bf3dd13b-a849-41c6-86c3-a59f3d8a8c64)">
@@ -134,7 +134,7 @@ Per tancar la Terminal escriurem 'exit' i confirmarem. Ara ja podem tancar la Te
 
 </details>
 
-<details open>
+<details close>
 <summary>Sistemes Windows</summary>
 
 ### <div align="center">Instal·lació (Windows)</div>
