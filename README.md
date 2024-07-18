@@ -134,7 +134,7 @@ Per tancar la Terminal escriurem 'exit' i confirmarem. Ara ja podem tancar la Te
 
 </details>
 
-<details close>
+<details open>
 <summary>Sistemes Windows</summary>
 
 ### <div align="center">Instal·lació (Windows)</div>
