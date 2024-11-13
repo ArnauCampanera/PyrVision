@@ -56,7 +56,7 @@ A continuació es detallen les instruccions per instal·lar i utilitzar PyrVisio
 Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
 
 #### Prerequisits
-Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió de Python 3.9, i el fitxer acabat en 'pkg'.
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/#latest-miniconda-installer-links) triant l'arquitectura de CPU adequada (Intel x86 / M1, M2, M3). Es recomana baixar la versió de Python 3.10, i el fitxer acabat en 'pkg'.
 
 Executem el fitxer "Miniconda3-latest-MacOSX-x86_64.pkg" o "Miniconda3-latest-MacOSX-arm64.pkg" (depenent de l'arquitectura) i seguim els passos en pantalla.
 
@@ -65,7 +65,7 @@ Un cop finalitzat, executarem l'aplicació 'Terminal'. Es pot trobar a dins de l
 Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes i que aquests puguin seguir funcionant independentment. Per fer-ho introduirem:
 
 ```bash
-conda create --name pyrvision python=3.9
+conda create --name pyrvision python=3.10
 ```
 
 Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
@@ -142,7 +142,7 @@ Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits.
 
 #### Prerequisits
 ##### Miniconda
-Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#windows-installers). Es recomana baixar la versió Python 3.9 .
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#windows-installers). Es recomana baixar la versió Python 3.10 .
 
 Executem el fitxer descarregat i seguim els passos en pantalla.
 
@@ -151,7 +151,7 @@ Un cop finalitzada l'instal·lació trobarem al menú de Windows una nova carpet
 Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes i que aquests puguin seguir funcionant independentment. Per fer-ho introduirem:
 
 ```bash
-conda create --name pyrvision python=3.9
+conda create --name pyrvision python=3.10
 ```
 
 Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
@@ -230,7 +230,7 @@ Per tancar 'Anaconda Prompt (miniconda3)' escriurem 'exit' i confirmarem. Ara ja
 Per poder utilitzar PyrVision localment cal instal·lar uns prerequisits. 
 
 #### Prerequisits
-Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#linux-installers) triant l'arquitectura de CPU adequada (si no n'esteu segurs, la primera versió serà probablement la bona). Es recomana baixar la versió de Python 3.9 .
+Primer cal instal·lar ['miniconda'](https://docs.anaconda.com/free/miniconda/miniconda-other-installer-links/#linux-installers) triant l'arquitectura de CPU adequada (si no n'esteu segurs, la primera versió serà probablement la bona). Es recomana baixar la versió de Python 3.10 .
 
 Per instal·lar miniconda haurem d'introduir algunes comandes des de la Terminal. En la següent comanda cal substituir 'fitxer' per la ruta fins al fitxer descarregat.
 ```bash
@@ -243,7 +243,7 @@ Un cop finalitzat, tanquem i reobrim la Terminal per aplicar els canvis.
 Seguidament, caldrà crea un 'entorn' per instal·lar-hi els requeriments de PyrVision sense trencar llibreries d'altres programes i que aquests puguin seguir funcionant independentment. Per fer-ho introduirem:
 
 ```bash
-conda create --name pyrvision python=3.9
+conda create --name pyrvision python=3.10
 ```
 
 Quan ens pregunti si volem instal·lar els paquets amb 'Proceed ([y]/n)?' escriurem 'y' i presionarem 'Enter'.
