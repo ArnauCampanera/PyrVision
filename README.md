@@ -3,6 +3,8 @@
 
 [English version](https://github.com/ArnauCampanera/PyrVision/blob/main/README_en.md)
 
+Última actualització de codi: 13/01/2025
+Última versió dels models: 18/10/2024
 
 
 PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la col·laboració del [Centre de Visió per Computador](https://www.cvc.uab.es) que té la capacitat de detectar automàticament fins a 16 classes diferents.
@@ -35,6 +37,7 @@ PyrVision pot detectar les següents espècies de mamífers salvatges:
 - Cérvol - Cervus elaphus [C][BN]
 - Esquirol - Sciurus vulgaris [C]
 - Ós bru - Ursus arctos [C][BN]
+- Llop - Canis lupus [C][BN]
 - Daina - Dama dama [C][BN]
 - Marta - Martes sp. [BN]
 - Teixó - Meles meles [BN]
