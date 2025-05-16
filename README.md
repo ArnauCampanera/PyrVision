@@ -55,7 +55,7 @@ Other classes:
 Instructions for installing and using PyrVision depend on your platform.
 
 <details close>
-<sumary>macOS Systems</summary>
+<summary>macOS Systems</summary>
 
 ### <div align="center">Installation (macOS)</div>
 To use PyrVision locally, you'll need to install some prerequisites.
