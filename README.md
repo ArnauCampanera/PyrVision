@@ -31,7 +31,7 @@ You can find the list of these species below, depending on whether they are reco
 
 PyrVision can detect the following wild mammal species:
 
-- Roe deer - *Capreolus capreolus* [C][Bw]  
+- Roe deer - *Capreolus capreolus* [C][BW]  
 - Wildcat - *Felis silvestris* [C][BW]  
 - Hare - *Lepus europaeus* [C][BW]  
 - Chamois - *Rupicapra pyrenaica* [C][BW]  

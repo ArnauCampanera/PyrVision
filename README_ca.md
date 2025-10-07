@@ -8,7 +8,7 @@
 Última versió dels models: 07/10/2025
 
 
-PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la col·laboració del [Centre de Visió per Computador](https://www.cvc.uab.es) que té la capacitat de detectar automàticament fins a 18 classes diferents.
+PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la col·laboració del [Centre de Visió per Computador](https://www.cvc.uab.es) que té la capacitat de detectar automàticament fins a 20 classes diferents.
 PyrVision utilitza [YOLO](https://docs.ultralytics.com/models/yolov9/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
 
 <div align="center">
@@ -29,27 +29,27 @@ Podeu trobar la llista d'aquestes espècies a continuació, en funció de si só
 
 ### Espècies
 PyrVision pot detectar les següents espècies de mamífers salvatges:
-- Cabirol - Capreolus capreolus [C][BN]
-- Gat fer - Felis silvestris [C][BN]
-- Llebre - Lepus europaeus [C][BN]
-- Isard - Rupicapra pyrenaica [C][BN]
-- Porc senglar - Sus scrofa [C][BN]
-- Guineu - Vulpes vulpes [C][BN]
-- Cérvol - Cervus elaphus [C][BN]
-- Esquirol - Sciurus vulgaris [C]
-- Ós bru - Ursus arctos [C][BN]
-- Llop - Canis lupus [C][BN]
-- Daina - Dama dama [C][BN]
-- Marta - Martes sp. [BN]
-- Teixó - Meles meles [BN]
-- Geneta - Genetta genetta [BN]
+- Cabirol - *Capreolus capreolus* [C][BN]
+- Gat fer - *Felis silvestris* [C][BN]
+- Llebre - *Lepus europaeus* [C][BN]
+- Isard - *Rupicapra pyrenaica* [C][BN]
+- Porc senglar - *Sus scrofa* [C][BN]
+- Guineu - *Vulpes vulpes* [C][BN]
+- Cérvol - *Cervus elaphus* [C][BN]
+- Esquirol - *Sciurus vulgaris* [C]
+- Ós bru - *Ursus arctos* [C][BN]
+- Llop - *Canis lupus* [C][BN]
+- Daina - *Dama dama* [C][BN]
+- Marta - *Martes sp.* [BN]
+- Teixó - *Meles meles* [BN]
+- Geneta - *Genetta genetta* [BN]
 
 Altres classes:
-- Vaca - Bos taurus [C][BN]
-- Conill - Oryctolagus cuniculus [C][BN]
-- Cavall - Equus caballus [C]
-- Gos - Canis familiaris [C]
-- Humà - Homo sapiens [C]
+- Vaca - *Bos taurus* [C][BN]
+- Conill - *Oryctolagus cuniculus* [C][BN]
+- Cavall - *Equus caballus* [C]
+- Gos - *Canis familiaris* [C]
+- Humà - *Homo sapiens* [C]
 - Vehicle [C]
 
 
