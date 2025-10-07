@@ -2,13 +2,13 @@
 
 [Catalan version](https://github.com/ArnauCampanera/PyrVision/blob/main/README_ca.md)
 
-Last code update: 22/03/2025
+Last code update: 07/10/2025
 
-Last model version: 22/03/2025
+Last model version: 07/10/2025
 
 
-PyrVision is an Artificial Intelligence model developed at the [Forest Science and Technology Centre of Catalonia](https://www.ctfc.cat) in collaboration with the [Computer Vision Center](https://www.cvc.uab.es). It is capable of automatically detecting up to 18 different classes.  
-PyrVision uses [RT-DETR](https://docs.ultralytics.com/models/rtdetr/), a state-of-the-art object detection model, to maximize accuracy and speed.
+PyrVision is an Artificial Intelligence model developed at the [Forest Science and Technology Centre of Catalonia](https://www.ctfc.cat) in collaboration with the [Computer Vision Center](https://www.cvc.uab.es). It is capable of automatically detecting up to 20 different classes.  
+PyrVision uses [YOLO](https://docs.ultralytics.com/models/yolov9/), a state-of-the-art object detection model, to maximize accuracy and speed.
 
 <div align="center">
   <img width="60%" src="https://github.com/ArnauCampanera/PyrVision/assets/159940202/bf3dd13b-a849-41c6-86c3-a59f3d8a8c64)">
@@ -43,10 +43,12 @@ PyrVision can detect the following wild mammal species:
 - Wolf - *Canis lupus* [C][BW]  
 - Fallow deer - *Dama dama* [C][BW]  
 - Marten - *Martes sp.* [BW]  
-- Badger - *Meles meles* [BW]  
+- Badger - *Meles meles* [BW]
+- Common genet - *Genetta genetta* [BW]  
 
 Other classes:  
-- Cow - *Bos taurus* [C][BW]  
+- Cow - *Bos taurus* [C][BW]
+- Rabbit - *Oryctolagus cuniculus* [C][BW]  
 - Horse - *Equus caballus* [C]  
 - Dog - *Canis familiaris* [C]  
 - Human - *Homo sapiens* [C]  

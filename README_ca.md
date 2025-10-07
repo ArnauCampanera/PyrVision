@@ -3,13 +3,13 @@
 
 [English version](https://github.com/ArnauCampanera/PyrVision/blob/main/README.md)
 
-Última actualització de codi: 22/03/2025
+Última actualització de codi: 07/10/2025
 
-Última versió dels models: 22/03/2025
+Última versió dels models: 07/10/2025
 
 
 PyrVision és un model d'Intel·ligència Artificial desenvolupat al [Centre de Ciència i Tecnologia Forestal de Catalunya](https://www.ctfc.cat) amb la col·laboració del [Centre de Visió per Computador](https://www.cvc.uab.es) que té la capacitat de detectar automàticament fins a 18 classes diferents.
-PyrVision utilitza [RT-DETR](https://docs.ultralytics.com/models/rtdetr/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
+PyrVision utilitza [YOLO](https://docs.ultralytics.com/models/yolov9/), l'estat de l'art dels models de detecció d'objectes, per tal de maximitzar precisió i rapidesa.
 
 <div align="center">
   <img width="60%" src="https://github.com/ArnauCampanera/PyrVision/assets/159940202/bf3dd13b-a849-41c6-86c3-a59f3d8a8c64)">
@@ -42,9 +42,11 @@ PyrVision pot detectar les següents espècies de mamífers salvatges:
 - Daina - Dama dama [C][BN]
 - Marta - Martes sp. [BN]
 - Teixó - Meles meles [BN]
+- Geneta - Genetta genetta [BN]
 
 Altres classes:
 - Vaca - Bos taurus [C][BN]
+- Conill - Oryctolagus cuniculus [C][BN]
 - Cavall - Equus caballus [C]
 - Gos - Canis familiaris [C]
 - Humà - Homo sapiens [C]
